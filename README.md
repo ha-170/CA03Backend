@@ -10,15 +10,23 @@ Det kræver en local user for sin MySQL database, som hedder "dev" med adgangsko
 
 ### I terminalen:
 cd ind til mappen, hvor docker er installeret. 
+
 kør "docker-compose build"
+
 kør "docker-compose up -d"
+
 I docker-compose.yml, ændr "CONNECTION_STR" til din egen connection string.
 
 ### I koden:
+
 I EMF_CREATOR, ændr "CONNECTION_STR" til din egen connection string - linie 43 og 46.
+
 I pom.xml-filen, ændr "remote.server" til din egen server-ip efterfulgt af "/manager/text" - linie 21.
+
 I persistence.xml, ændr "property value" til din lokale database - linie 24.
+
 I travis.yml, ændr "CREATE DATABASE ..." til navnet på din lokale test-database - linie 43. 
+
 I security.SharedSecret, fjern/udkommenter "if(true){return "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA".getBytes();}" - linie 21-23.
 
 SetupTestUsers.java er tilføjet i .gitignore, så der ikke pushes brugernavne og adgangskoder på GitHub. 
